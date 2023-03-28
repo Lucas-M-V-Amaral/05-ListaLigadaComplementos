@@ -8,6 +8,7 @@ struct NO {
 };
 
 NO* primeiro = NULL;
+NO* comp = NULL;
 
 // headers
 void menu();
@@ -128,18 +129,26 @@ void inserirElemento()
 	if (primeiro == NULL)
 	{
 		primeiro = novo;
+		comp = novo;
 	}
-	else
+	else if (primeiro->prox == NULL)
 	{
-		// procura o final da lista
+		NO* aux = primeiro;
+		comp = novo;
+		if (aux->valor > novo->valor) {
+
+		}
+
+
+		/*// procura o final da lista
 		NO* aux = primeiro;
 		while (aux->prox != NULL) {
 			aux = aux->prox;
 		}
-		aux->prox = novo;
+		aux->prox = novo;*/
 	}
 }
-
+	
 void excluirElemento()
 {
 
