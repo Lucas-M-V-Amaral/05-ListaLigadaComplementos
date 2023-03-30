@@ -135,10 +135,26 @@ void inserirElemento()
 	{
 		NO* aux = primeiro;
 		comp = novo;
-		if (aux->valor > novo->valor) {
-
+		while (aux->prox != NULL) {
+			if (aux->valor > novo->valor) {
+				break;
+			}
+			aux = aux->prox;
 		}
 
+		if (aux->prox == NULL) {
+			aux->prox = novo;
+		}
+
+		else {
+			while (aux->prox != NULL)
+			{
+				comp->valor = aux->valor;
+				aux->valor = novo->valor;
+			}
+			
+
+		}
 
 		/*// procura o final da lista
 		NO* aux = primeiro;
